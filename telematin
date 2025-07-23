@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Corrections - Orthographe</title>
+  <style>
+    body { margin: 0; font-family: monospace; line-height: 1.1; }
+    .container { display: flex; }
+    aside { width: 240px; background: #f3f3f3; padding: 20px; height: 100vh; position: sticky; top: 0; overflow-y: auto; border-right: 1px solid #ccc; flex-shrink: 0; }
+    aside a { display: block; margin: 12px 0; text-decoration: none; color: #0057b7; font-weight: bold; }
+    aside a .dot-orthographe { color: #c0392b; } /* Rouge pour le rond d'Orthographe */
+    aside a .dot-stats { color: #0057b7; } /* Bleu pour le rond de Statistiques */
+    main { flex-grow: 1; padding: 20px; max-width: calc(100% - 280px); }
+    details { margin-bottom: 2em; }
+    summary { font-size: 1.1em; font-weight: bold; cursor: pointer; margin-bottom: .5em; padding: 8px; background: #e8f0fe; border-radius: 4px; }
+    pre { background: #fff; padding: 10px; border-left: 4px solid #0057b7; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; margin: 0; line-height: 1.1; }
+    .orthographe b { color: #c0392b; font-weight: bold; } /* Rouge pour les différences en gras */
+    .stats ul { list-style-type: disc; padding-left: 20px; margin: 10px 0; }
+    .stats li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; line-height: 1.2; }
+    .block { display: block; margin: 0; padding: 0; }
+    .st-header { font-weight: bold; line-height: 1.1; }
+    .content { line-height: 1.1; word-wrap: break-word; overflow-wrap: break-word; }
+    .separator { line-height: 1.1; }
+    .downloads { margin: 30px 0 10px 0; font-size: 0.95em; }
+    .downloads button { color: #0057b7; text-decoration: none; border: none; background: none; cursor: pointer; font-size: 1em; padding: 0; }
+    .downloads button:hover { text-decoration: underline; }
+    @media print { aside, summary { display: none; } details { display: block !important; } }
+  </style>
+</head>
+<body>
+<div class='container'>
+  <aside>
+    <h3>Navigation</h3>
+    <a href='#orthographe'><span class='dot-orthographe'>🔴</span> Orthographe</a>
+    <a href='#stats'><span class='dot-stats'>🔵</span> Statistiques</a>
+    <div class='downloads'>
+      <p><button onclick='imprimer()'>📄 Télécharger en PDF</button></p>
+    </div>
+  </aside>
+  <main>
+    <details id='orthographe'>
+      <summary>ORTHOGRAPHE - TYPOGRAPHIE</summary>
+      <pre class='orthographe'>
+ST 59
+Original  :	les 12 <b>canadairs</b> français suite aux incendies historiques
+Corrigé   :	les 12 <b>Canadairs</b> français suite aux incendies historiques
+--------------------------------------------------
+
+ST 140
+Original  :	- J.Ghiglia : Bison <b>futé</b> voit rouge dès demain dans le sens
+Corrigé   :	- J.Ghiglia : Bison <b>Futé</b> voit rouge dès demain dans le sens
+--------------------------------------------------
+
+ST 145
+Original  :	- C'est pour éviter ce genre <b>d&#x27;accident</b> dangereux, parfois même
+Corrigé   :	- C'est pour éviter ce genre <b>d&#x27;accidents</b> dangereux, parfois même
+--------------------------------------------------
+
+ST 146
+Original  :	<b>mortel,</b> impliquant des patrouilleurs d'autoroute,
+Corrigé   :	<b>mortels,</b> impliquant des patrouilleurs d'autoroute,
+--------------------------------------------------
+
+ST 221
+Original  :	6e étape aujourd'hui entre Bayeux et <b>Vir.</b>
+Corrigé   :	6e étape aujourd'hui entre Bayeux et <b>Vire.</b>
+--------------------------------------------------
+
+ST 289
+Original  :	Quelques petits nuages au <b>Nord.</b>
+Corrigé   :	Quelques petits nuages au <b>nord.</b>
+--------------------------------------------------
+
+ST 341
+Original  :	je <b>fais</b> vraiment beaucoup me documenter.
+Corrigé   :	je <b>vais</b> vraiment beaucoup me documenter.
+--------------------------------------------------
+
+ST 376
+Original  :	Pour une motte de beurre de 1 kg, il faut <b>1</b> l de lait.
+Corrigé   :	Pour une motte de beurre de 1 kg, il faut <b>20</b> l de lait.
+--------------------------------------------------
+
+ST 512
+Original  :	Là-bas, il y a une race de chiens <b>millénaires</b>
+Corrigé   :	Là-bas, il y a une race de chiens <b>millénaire</b>
+--------------------------------------------------
+
+ST 521
+Original  :	- J.-B.Marteau : On respire <b>Un</b> peu dans le Sud.
+Corrigé   :	- J.-B.Marteau : On respire <b>un</b> peu dans le Sud.
+--------------------------------------------------
+
+ST 532
+Original  :	en charge de la <b>visite,</b> doivent être particulièrement attentives.
+Corrigé   :	en charge de la <b>vigie,</b> doivent être particulièrement attentives.
+--------------------------------------------------
+
+ST 549
+Original  :	- Sur ces <b>massif</b> particulièrement touchés par la sécheresse,
+Corrigé   :	- Sur ces <b>massifs</b> particulièrement touchés par la sécheresse,
+--------------------------------------------------
+
+ST 883
+Original  :	<b>Où</b> il n'y a pas vraiment de flux touristique,
+Corrigé   :	<b>où</b> il n'y a pas vraiment de flux touristique,
+--------------------------------------------------
+
+ST 998
+Original  :	- Surprise, <b>En</b> pleine Provence, un ancien ministre vient en voisin
+Corrigé   :	- Surprise, <b>en</b> pleine Provence, un ancien ministre vient en voisin
+--------------------------------------------------
+
+ST 1228
+Original  :	On est presque 8,6 milliards de téléphones en circulation
+Corrigé   :	On est presque <b>à</b> 8,6 milliards de téléphones en circulation
+--------------------------------------------------
+
+ST 1314
+Original  :	de rentrée des classes, <b>Qui</b> se mettent en place dès août...
+Corrigé   :	de rentrée des classes, <b>qui</b> se mettent en place dès août...
+--------------------------------------------------
+
+ST 1373
+Original  :	et <b>faire</b> leurs courses ?
+Corrigé   :	et <b>font</b> leurs courses ?
+--------------------------------------------------
+
+ST 1390
+Original  :	Dans les multimédias, Arte, c'est bien l'alliance d'un <b>allemand</b>
+Corrigé   :	Dans les multimédias, Arte, c'est bien l'alliance d'un <b>Allemand</b>
+--------------------------------------------------
+
+ST 1391
+Original  :	et d'un <b>français.</b>
+Corrigé   :	et d'un <b>Français.</b>
+--------------------------------------------------
+
+ST 1609
+Original  :	- Sur ces <b>massif</b> particulièrement touchés par la sécheresse,
+Corrigé   :	- Sur ces <b>massifs</b> particulièrement touchés par la sécheresse,
+--------------------------------------------------
+
+ST 2020
+Original  :	a dit qu'on <b>l&#x27;a</b> prêtait, mais on ne sait pas contre quoi,
+Corrigé   :	a dit qu'on <b>la</b> prêtait, mais on ne sait pas contre quoi,
+--------------------------------------------------
+
+ST 2077
+Original  :	On peut se sécher les oreilles, <b>Non</b> pas avec une serviette
+Corrigé   :	On peut se sécher les oreilles, <b>non</b> pas avec une serviette
+--------------------------------------------------
+
+ST 2340
+Original  :	-O.de Lamberterie : Beaucoup d'ateliers <b>d&#x27;écritures</b> sont nuls.
+Corrigé   :	-O.de Lamberterie : Beaucoup d'ateliers <b>d&#x27;écriture</b> sont nuls.
+--------------------------------------------------
+
+ST 2355
+Original  :	<b>Par</b> écrivains mais par thèmes.
+Corrigé   :	<b>par</b> écrivains mais par thèmes.
+--------------------------------------------------
+
+ST 2549
+Original  :	Cette saga <b>est</b> <b>élancé</b> hier.
+Corrigé   :	Cette saga <b>a</b> <b>été</b> <b>lancée</b> hier.
+--------------------------------------------------
+
+ST 2656
+Original  :	A l'UMP, à LR, vous avez <b>une</b> plein de perquisitions.
+Corrigé   :	A l'UMP, à LR, vous avez <b>eu</b> plein de perquisitions.
+--------------------------------------------------
+
+ST 2687
+Original  :	<b>sur</b> soit quelque chose qui aille dans le sens d'une normalisation
+Corrigé   :	soit quelque chose qui aille dans le sens d'une normalisation
+--------------------------------------------------
+
+ST 2708
+Original  :	Une alliance <b>remportée</b> face à un contexte sécuritaire
+Corrigé   :	Une alliance <b>renforcée</b> face à un contexte sécuritaire
+--------------------------------------------------
+
+ST 2748
+Original  :	C'est un système de défense <b>aérien</b> qui permet à l'Ukraine
+Corrigé   :	C'est un système de défense <b>aérienne</b> qui permet à l'Ukraine
+--------------------------------------------------
+
+ST 2772
+Original  :	- Au sol, <b>Sur</b> le poste de contrôle de l'Arc de Triomphe, ce général
+Corrigé   :	- Au sol, <b>sur</b> le poste de contrôle de l'Arc de Triomphe, ce général
+--------------------------------------------------
+
+ST 2840
+Original  :	et des <b>courses</b> <b>poursuite.</b>
+Corrigé   :	et des <b>courses-poursuites.</b>
+--------------------------------------------------
+
+ST 2919
+Original  :	<b>jambon</b> 007 ?
+Corrigé   :	<b>Jambon</b> 007 ?
+--------------------------------------------------
+
+ST 2961
+Original  :	Et c'est la chance d'être en adéquation avec <b>humour</b>
+Corrigé   :	Et c'est la chance d'être en adéquation avec <b>l&#x27;humour</b>
+--------------------------------------------------
+
+ST 2995
+Original  :	<b>différentes.</b>
+Corrigé   :	<b>différente.</b>
+--------------------------------------------------
+
+ST 3000
+Original  :	Pour les fans des <b>&quot;Bronzés&quot;</b> <b>Je</b> vous propose le livre
+Corrigé   :	Pour les fans des <b>&quot;Bronzés&quot;,</b> <b>je</b> vous propose le livre
+--------------------------------------------------
+      </pre>
+    </details>
+    <details id='stats'>
+      <summary>STATISTIQUES</summary>
+      <div class='stats'>
+        <ul>
+<li>Durée du programme : 3h01</li>
+<li>Nombre de sous-titres : 3 062</li>
+<li>Nombre de mots : 22 157</li>
+<li>Nombre de fautes : 35</li>
+<li>Soit 11.4 fautes pour 1 000 sous-titres et 1.6 fautes pour 1 000 mots</li>
+        </ul>
+      </div>
+    </details>
+  </main>
+</div>
+<script>
+function imprimer() {
+  document.querySelectorAll('details').forEach(d => d.setAttribute('open', ''));
+  window.print();
+}
+</script>
+</body>
+</html>
