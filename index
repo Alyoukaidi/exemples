@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Table des pages</title>
+  <style>
+    body {font-family: sans-serif; max-width: 40rem; margin: 2rem auto;}
+    ul   {line-height: 1.8;}
+    a    {text-decoration: none;}
+    a:hover {text-decoration: underline;}
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="La%20maison%20des%20Maternelles%20-%20La%20maison%20des%20Maternelles%20%C3%A0%20votre%20service_France%202_2025_07_10_09_59.html" target="_blank" rel="noopener">La maison des Maternelles – À votre service (10/07/2025 - 09:59)</a></li>
+    <li><a href="La%20maison%20des%20Maternelles_France%202_2025_07_10_09_33.html" target="_blank" rel="noopener">La maison des Maternelles (10/07/2025 - 09:33)</a></li>
+    <li><a href="N'oubliez%20pas%20les%20paroles_France%202_2025_07_10_18_39.html" target="_blank" rel="noopener">N'oubliez pas les paroles (10/07/2025 - 18:39)</a></li>
+    <li><a href="N'oubliez%20pas%20les%20paroles_France%202_2025_07_10_19_11.html" target="_blank" rel="noopener">N'oubliez pas les paroles (10/07/2025 - 19:11)</a></li>
+    <li><a href="T%C3%A9lématin_France%202_2025_07_10_06_28.html" target="_blank" rel="noopener">Télématin (10/07/2025 - 06:28)</a></li>
+    <li><a href="%C3%87a%20commence%20aujourd'hui%20-%20Best%20of%20Un%20fait%20divers%20impossible%20%C3%A0%20oublier_France%202_2025_07_10_13_56.html" target="_blank" rel="noopener">Ça commence aujourd’hui – Best of : Un fait divers impossible à oublier (10/07/2025 - 13:56)</a></li>
+  </ul>
+</body>
+</html>
