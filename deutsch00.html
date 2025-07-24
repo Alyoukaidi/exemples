@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Corrections</title>
+  <style>
+    body { margin: 0; font-family: monospace; line-height: 1.1; }
+    .container { display: flex; }
+    aside { width: 240px; background: #f3f3f3; padding: 20px; height: 100vh; position: sticky; top: 0; overflow-y: auto; border-right: 1px solid #ccc; flex-shrink: 0; }
+    aside a { display: block; margin: 12px 0; text-decoration: none; color: #0057b7; font-weight: bold; }
+    main { flex-grow: 1; padding: 20px; max-width: calc(100% - 280px); }
+    details { margin-bottom: 2em; }
+    summary { font-size: 1.1em; font-weight: bold; cursor: pointer; margin-bottom: .5em; }
+    pre { background: #fff; padding: 10px; border-left: 4px solid #ccc; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; margin: 0; line-height: 1.1; }
+    .block { display: block; margin: 0; padding: 0; }
+    .st-header { margin: 0; padding: 0; font-weight: bold; line-height: 1.1; }
+    .content { margin: 0; padding: 0; line-height: 1.1; word-wrap: break-word; overflow-wrap: break-word; }
+    .separator { margin: 0; padding: 0; color: #888; line-height: 1.1; }
+    .orthographe b { color: #0057b7; }
+    .commas b { color: #8e44ad; }
+    .reformulation b { color: #c0392b; }
+    .noms_proches b { color: #27ae60; }
+    .syntaxe b { color: #f1c40f; }
+    .syntaxe .content { word-wrap: break-word; overflow-wrap: break-word; }
+    .downloads { margin: 30px 0 10px 0; font-size: 0.95em; }
+    .downloads p { margin: 8px 0; }
+    .downloads a, .downloads button { color: #0057b7; text-decoration: none; border: none; background: none; cursor: pointer; font-size: 1em; padding: 0; }
+    .downloads a:hover, .downloads button:hover { text-decoration: underline; }
+    .delete-btn { background: none; border: none; color: red; cursor: pointer; font-size: 1em; margin-left: 8px; padding: 0; vertical-align: baseline; }
+    @media print { aside, summary, .delete-btn { display: none; } details { display: block !important; } }
+  </style>
+</head>
+<body>
+<div class='container'>
+  <aside>
+    <h3>Navigation</h3>
+    <a href='#orthographe'>🔵 Orthographe</a>
+    <a href='#commas'>🟣 Virgules</a>
+    <a href='#reformulation'>🔴 Reformulations</a>
+    <a href='#noms_proches'>🟢 Noms proches</a>
+    <a href='#syntaxe'>🟡 Coupures</a>
+    <div class='downloads'>
+      <p><button onclick='imprimer()'>📄 Télécharger en PDF</button></p>
+      <p><button onclick='downloadTxt()'>💾 Télécharger correction_final.txt</button></p>
+    </div>
+  </aside>
+  <main>
+<details id='orthographe'>
+<summary>ORTHOGRAPHE - TYPOGRAPHIE</summary>
+<pre class='orthographe'>
+
+<div class='block' id='ST_1'><div class='st-header'>ST 1<button onclick="removeBlock('ST_1')" class='delete-btn'>x</button></div><div class='content'>Original  :	Beim heutigen <b>AHF-NetUp:</b> Erwachsenenimpfungen, wen <b>kümmert's?,</b></div><div class='content'>Corrigé   :	Beim heutigen <b>AHF-NetUp</b> <b>:</b> Erwachsenenimpfungen, wen <b>kümmert's</b> <b>?</b> <b>,</b></div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_5'><div class='st-header'>ST 5<button onclick="removeBlock('ST_5')" class='delete-btn'>x</button></div><div class='content'>Original  :	Wir waren uns einig, <b>das</b> dringend etwas geschehen muss,</div><div class='content'>Corrigé   :	Wir waren uns einig, <b>dass</b> dringend etwas geschehen muss,</div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_10'><div class='st-header'>ST 10<button onclick="removeBlock('ST_10')" class='delete-btn'>x</button></div><div class='content'>Original  :	Auch im Vergleich zu anderen <b>Landern</b> sind wir nicht signifikant schlechter.</div><div class='content'>Corrigé   :	Auch im Vergleich zu anderen <b>Ländern</b> sind wir nicht signifikant schlechter.</div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_13'><div class='st-header'>ST 13<button onclick="removeBlock('ST_13')" class='delete-btn'>x</button></div><div class='content'>Original  :	faktenbasierte Daten haben, um hier <b>einen</b> valide Aussage zu treffen</div><div class='content'>Corrigé   :	faktenbasierte Daten haben, um hier <b>eine</b> valide Aussage zu treffen</div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_15'><div class='st-header'>ST 15<button onclick="removeBlock('ST_15')" class='delete-btn'>x</button></div><div class='content'>Original  :	<b>das</b> sich Österreicher durchaus impfen lassen.</div><div class='content'>Corrigé   :	<b>dass</b> sich Österreicher durchaus impfen lassen.</div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_22'><div class='st-header'>ST 22<button onclick="removeBlock('ST_22')" class='delete-btn'>x</button></div><div class='content'>Original  :	Es ist eine sehr einfache und günstige <b>intervention,</b></div><div class='content'>Corrigé   :	Es ist eine sehr einfache und günstige <b>Intervention,</b></div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_25'><div class='st-header'>ST 25<button onclick="removeBlock('ST_25')" class='delete-btn'>x</button></div><div class='content'>Original  :	indem sie auch zur <b>Bevöllkerung</b> geht, bei Veranstaltungen Impfungen anbietet,</div><div class='content'>Corrigé   :	indem sie auch zur <b>Bevölkerung</b> geht, bei Veranstaltungen Impfungen anbietet,</div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_29'><div class='st-header'>ST 29<button onclick="removeBlock('ST_29')" class='delete-btn'>x</button></div><div class='content'>Original  :	und zu verfügbaren Impfstoffen auf unserer <b>homepage.</b></div><div class='content'>Corrigé   :	und zu verfügbaren Impfstoffen auf unserer <b>Homepage.</b></div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_35'><div class='st-header'>ST 35<button onclick="removeBlock('ST_35')" class='delete-btn'>x</button></div><div class='content'>Original  :	Sondern der erste Kontakt mit den <b>Varizella-zoster-viren</b></div><div class='content'>Corrigé   :	Sondern der erste Kontakt mit den <b>Varizella-Zoster-Viren</b></div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_37'><div class='st-header'>ST 37<button onclick="removeBlock('ST_37')" class='delete-btn'>x</button></div><div class='content'>Original  :	Man kennt die <b>Windpocken,</b> von der Erstinfektion.</div><div class='content'>Corrigé   :	Man kennt die <b>Windpocken</b> von der Erstinfektion.</div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_40'><div class='st-header'>ST 40<button onclick="removeBlock('ST_40')" class='delete-btn'>x</button></div><div class='content'>Original  :	wieder <b>Verstärken.</b></div><div class='content'>Corrigé   :	wieder <b>verstärken.</b></div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_42'><div class='st-header'>ST 42<button onclick="removeBlock('ST_42')" class='delete-btn'>x</button></div><div class='content'>Original  :	gerade selbst etwas schwächer ist, die Reaktivierung dieser <b>Viren.</b></div><div class='content'>Corrigé   :	gerade selbst etwas schwächer ist, die Reaktivierung dieser <b>Viren</b></div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_47'><div class='st-header'>ST 47<button onclick="removeBlock('ST_47')" class='delete-btn'>x</button></div><div class='content'>Original  :	Sodass sich der Betroffene, die <b>Betroffene</b> Versicherte</div><div class='content'>Corrigé   :	Sodass sich der Betroffene, die <b>betroffene</b> Versicherte</div><div class='separator'>--------------------------------------------------</div></div>
+</pre></details>
+<details id='commas'>
+<summary>VIRGULES - Toutes ne sont pas facultatives : à vérifier</summary>
+<pre class='commas'>
+
+<div class='block' id='ST_18'><div class='st-header'>ST 18<button onclick="removeBlock('ST_18')" class='delete-btn'>x</button></div><div class='content'>Original  :	Man hat die <b>Möglichkeit</b> den Termin zu stornieren und zu verlegen,</div><div class='content'>Corrigé   :	Man hat die <b>Möglichkeit,</b> den Termin zu stornieren und zu verlegen,</div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_19'><div class='st-header'>ST 19<button onclick="removeBlock('ST_19')" class='delete-btn'>x</button></div><div class='content'>Original  :	aber wenn man nichts <b>hört</b> geht man davon aus,</div><div class='content'>Corrigé   :	aber wenn man nichts <b>hört,</b> geht man davon aus,</div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_30'><div class='st-header'>ST 30<button onclick="removeBlock('ST_30')" class='delete-btn'>x</button></div><div class='content'>Original  :	Auf der kann man sich auch für <b>Impfungen</b> die bei uns verfügbar <b>sind</b> anmelden.</div><div class='content'>Corrigé   :	Auf der kann man sich auch für <b>Impfungen,</b> die bei uns verfügbar <b>sind,</b> anmelden.</div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_44'><div class='st-header'>ST 44<button onclick="removeBlock('ST_44')" class='delete-btn'>x</button></div><div class='content'>Original  :	Wir möchten ein Programm <b>erarbeiten.</b> wo die Kliniken,</div><div class='content'>Corrigé   :	Wir möchten ein Programm <b>erarbeiten,</b> wo die Kliniken,</div><div class='separator'>--------------------------------------------------</div></div>
+</pre></details>
+<details id='reformulation'>
+<summary>PROPOSITIONS DE REFORMULATIONS</summary>
+<pre class='reformulation'>
+
+<div class='block' id='ST_4'><div class='st-header'>ST 4<button onclick="removeBlock('ST_4')" class='delete-btn'>x</button></div><div class='content'>Original  :	der Stadt Wien, dem Bundesministerium unsere Sozialversicherung <b>konfrontiehrt.</b></div><div class='content'>Corrigé   :	der Stadt Wien, dem Bundesministerium <b>und</b> unsere Sozialversicherung <b>konfrontiert.</b></div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_21'><div class='st-header'>ST 21<button onclick="removeBlock('ST_21')" class='delete-btn'>x</button></div><div class='content'>Original  :	Das führt zu einer Steigerung um 12 <b>Prozent</b> <b>Punkte.</b></div><div class='content'>Corrigé   :	Das führt zu einer Steigerung um 12 <b>Prozentpunkte.</b></div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_17'><div class='st-header'>ST 17<button onclick="removeBlock('ST_17')" class='delete-btn'>x</button></div><div class='content'>Original  :	ist die Arbeit mit <b>fix</b> vereinbarten Impfterminen.</div><div class='content'>Corrigé   :	ist die Arbeit mit <b>fest</b> vereinbarten Impfterminen.</div><div class='separator'>--------------------------------------------------</div></div>
+<div class='block' id='ST_43'><div class='st-header'>ST 43<button onclick="removeBlock('ST_43')" class='delete-btn'>x</button></div><div class='content'>Original  :	verhindern können und damit die Symptome der <b>Gürtelrose.</b></div><div class='content'>Corrigé   :	verhindern können und damit die Symptome der <b>Gürtelrose</b> <b>vermeiden</b> <b>können.</b></div><div class='separator'>--------------------------------------------------</div></div>
+</pre></details>
+<details id='noms_proches'>
+<summary>NOMS PROCHES : à vérifier</summary>
+<pre class='noms_proches'>
+
+<div class='content'>Noms proches à vérifier :</div>
+<div class='content'></div>
+<div class='content'>Austrian - Gastein</div>
+</pre></details>
+<details id='syntaxe'>
+<summary>COUPURES SUSPECTES : vérifier ponctuation/majuscule en frontière de sous-titres</summary>
+<pre class='syntaxe'>
+
+<div class='content'>Couples de blocs suspects détectés : 1</div>
+<div class='content'>==================================================</div>
+<div class='separator'>--------------------------------------------------</div>
+<div class='content'>Couple 1:</div>
+<div class='content'>[13] faktenbasierte Daten haben, um hier einen valide Aussage zu treffen</div>
+<div class='content'>[14] Aber ich denke, auch das Beispiel der 20 Millionen COVID-19 Impfungen zeigt,</div>
+<div class='content'>------------------------------</div>
+</pre></details>
+  </main>
+</div>
+<script>
+
+    let undoStack = [];
+
+    function removeBlock(id) {
+        const block = document.getElementById(id);
+        if (block) {
+            const parent = block.parentElement;
+            const index = Array.from(parent.children).indexOf(block);
+            undoStack.push({ id: id, html: block.outerHTML, parent: parent, index: index });
+            block.remove();
+        }
+    }
+
+    function undoLastRemoval() {
+        const last = undoStack.pop();
+        if (last) {
+            const children = Array.from(last.parent.children);
+            const newElem = createElementFromHTML(last.html);
+            if (last.index >= children.length) {
+                last.parent.appendChild(newElem);
+            } else {
+                last.parent.insertBefore(newElem, children[last.index]);
+            }
+        }
+    }
+
+    function createElementFromHTML(htmlString) {
+        const div = document.createElement("div");
+        div.innerHTML = htmlString.trim();
+        return div.firstChild;
+    }
+
+    document.addEventListener("keydown", function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === "z") {
+            e.preventDefault();
+            undoLastRemoval();
+        }
+    });
+
+    function imprimer() {
+        document.querySelectorAll('details').forEach(d => d.setAttribute('open', ''));
+        window.print();
+    }
+
+    function downloadTxt() {
+        const details = document.querySelectorAll('details');
+        const openStates = Array.from(details).map(d => d.hasAttribute('open'));
+        details.forEach(d => d.setAttribute('open', ''));
+        let blocks = [];
+        document.querySelectorAll('.block').forEach(block => {
+            const lines = block.innerText.split('\n');
+            if (lines.length >= 3) {
+                let st = lines[0];
+                const orig = lines[1].replace('Original  :\t', '');
+                const corr = lines[2].replace('Corrigé   :\t', '');
+                const sep = lines[3] || '-----------------------------------------------------';
+                st = st.replace(/(\d+)x$/, '$1');
+                const match = st.match(/ST\s*(\d+)/);
+                if (match) {
+                    const stNumber = parseInt(match[1]);
+                    blocks.push({ stNumber, content: st + '\nOriginal  : ' + orig + '\nCorrigé   : ' + corr + '\n' + sep + '\n' });
+                }
+            }
+        });
+        details.forEach((d, i) => {
+            if (!openStates[i]) {
+                d.removeAttribute('open');
+            }
+        });
+        blocks.sort((a, b) => a.stNumber - b.stNumber);
+        let content = blocks.map(block => block.content).join('');
+        const blob = new Blob([content], {type: 'text/plain;charset=utf-8'});
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'correction_final.txt';
+        link.click();
+    }
+    
+</script>
+</body>
+</html>
