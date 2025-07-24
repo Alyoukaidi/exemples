@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Correcties - Spelling</title>
+  <style>
+    body { margin: 0; font-family: monospace; line-height: 1.1; }
+    .container { display: flex; }
+    aside { width: 240px; background: #f3f3f3; padding: 20px; height: 100vh; position: sticky; top: 0; overflow-y: auto; border-right: 1px solid #ccc; flex-shrink: 0; }
+    aside a { display: block; margin: 12px 0; text-decoration: none; color: #0057b7; font-weight: bold; }
+    aside a .dot-spelling { color: #c0392b; } /* Rood voor de cirkel van Spelling */
+    aside a .dot-stats { color: #0057b7; } /* Blauw voor de cirkel van Statistieken */
+    main { flex-grow: 1; padding: 20px; max-width: calc(100% - 280px); }
+    details { margin-bottom: 2em; }
+    summary { font-size: 1.1em; font-weight: bold; cursor: pointer; margin-bottom: .5em; padding: 8px; background: #e8f0fe; border-radius: 4px; }
+    pre { background: #fff; padding: 10px; border-left: 4px solid #0057b7; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; margin: 0; line-height: 1.1; }
+    .spelling b { color: #c0392b; font-weight: bold; } /* Rood voor de vetgedrukte verschillen */
+    .stats ul { list-style-type: disc; padding-left: 20px; margin: 10px 0; }
+    .stats li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; line-height: 1.2; }
+    .block { display: block; margin: 0; padding: 0; }
+    .st-header { font-weight: bold; line-height: 1.1; }
+    .content { line-height: 1.1; word-wrap: break-word; overflow-wrap: break-word; }
+    .separator { line-height: 1.1; }
+    .downloads { margin: 30px 0 10px 0; font-size: 0.95em; }
+    .downloads button { color: #0057b7; text-decoration: none; border: none; background: none; cursor: pointer; font-size: 1em; padding: 0; }
+    .downloads button:hover { text-decoration: underline; }
+    @media print { aside, summary { display: none; } details { display: block !important; } }
+  </style>
+</head>
+<body>
+<div class='container'>
+  <aside>
+    <h3>Navigatie</h3>
+    <a href='#spelling'><span class='dot-spelling'>🔴</span> Spelling</a>
+    <a href='#stats'><span class='dot-stats'>🔵</span> Statistieken</a>
+    <div class='downloads'>
+      <p><button onclick='afdrukken()'>📄 Downloaden als PDF</button></p>
+    </div>
+  </aside>
+  <main>
+    <details id='spelling'>
+      <summary>SPELLING - TYPOGRAFIE</summary>
+      <pre class='spelling'>
+ST 12
+Origineel :	We zagen vanuit vogelhut dat dit een hele mooie spot is.
+Gecorrigeerd :	We zagen vanuit <b>de</b> vogelhut dat dit een hele mooie spot is.
+--------------------------------------------------
+
+ST 26
+Origineel :	<b>Hier</b> wordt de kans op een scherpe foto nog groter.
+Gecorrigeerd :	<b>Hierdoor</b> wordt de kans op een scherpe foto nog groter.
+--------------------------------------------------
+
+ST 28
+Origineel :	<b>Namelijk,</b> sluitertijd gelijk aan het aantal millimeters van je lens.
+Gecorrigeerd :	<b>Namelijk:</b> sluitertijd gelijk aan het aantal millimeters van je lens.
+--------------------------------------------------
+
+ST 29
+Origineel :	Fotografeer je met 500 mm, zet je de sluitertijd op <b>5/100e</b> seconde.
+Gecorrigeerd :	Fotografeer je met 500 mm, <b>dan</b> zet je de sluitertijd op <b>1/500e</b> seconde.
+--------------------------------------------------
+
+ST 33
+Origineel :	Hierdoor <b>kan</b> je je sluitertijd iets langer zetten.
+Gecorrigeerd :	Hierdoor <b>kun</b> je je sluitertijd iets langer zetten.
+--------------------------------------------------
+
+ST 41
+Origineel :	Je zit minimaal rond de <b>8.0.</b>
+Gecorrigeerd :	Je zit minimaal rond de <b>f/8.0.</b>
+--------------------------------------------------
+
+ST 43
+Origineel :	Dit zorgt voor een <b>feller</b> beeld.
+Gecorrigeerd :	Dit zorgt voor een <b>helderder</b> beeld.
+--------------------------------------------------
+
+ST 47
+Origineel :	De ruis blijft oké tot een hoog punt. We zitten nu op <b>5.000</b> ISO.
+Gecorrigeerd :	De ruis blijft oké tot een hoog punt. We zitten nu op <b>5000</b> ISO.
+--------------------------------------------------
+
+ST 49
+Origineel :	Veel mensen vinden de ruis natuurlijker <b>ogen.</b>
+Gecorrigeerd :	Veel mensen vinden de ruis <b>er</b> natuurlijker <b>uitzien.</b>
+--------------------------------------------------
+
+ST 57
+Origineel :	Met die <b>800mm</b> <b>kan</b> je volledig inzoomen en staat hij in het hele scherm.
+Gecorrigeerd :	Met die <b>800</b> <b>mm</b> <b>kun</b> je volledig inzoomen en staat hij in het hele scherm.
+--------------------------------------------------
+
+ST 65
+Origineel :	Met de full time manual focus <b>kan</b> je de autofocus een beetje helpen.
+Gecorrigeerd :	Met de full time manual focus <b>kun</b> je de autofocus een beetje helpen.
+--------------------------------------------------
+
+ST 66
+Origineel :	Je <b>kan</b> zelf aan de scherpstelring draaien.
+Gecorrigeerd :	Je <b>kunt</b> zelf aan de scherpstelring draaien.
+--------------------------------------------------
+
+ST 70
+Origineel :	Deze <b>Sony</b> <b>lens</b> is geen G Master.
+Gecorrigeerd :	Deze <b>Sony-lens</b> is geen G Master.
+--------------------------------------------------
+
+ST 74
+Origineel :	In één oogopslag <b>kan</b> je van 400 naar 800 zoomen.
+Gecorrigeerd :	In één oogopslag <b>kun</b> je van 400 naar 800 zoomen.
+--------------------------------------------------
+
+ST 76
+Origineel :	dat je kon voelen wanneer het statief van horizontaal naar verticaal <b>draait.</b>
+Gecorrigeerd :	dat je kon voelen wanneer het statief van horizontaal naar verticaal <b>draaide.</b>
+--------------------------------------------------
+      </pre>
+    </details>
+    <details id='stats'>
+      <summary>STATISTIEKEN</summary>
+      <div class='stats'>
+        <ul>
+<li>Duur van het programma : 3 min</li>
+<li>Aantal ondertitels : 57</li>
+<li>Aantal woorden : 455</li>
+<li>Aantal fouten : 15</li>
+<li>Dat is 263.2 fouten per 1 000 ondertitels en 33.0 fouten per 1 000 woorden</li>
+        </ul>
+      </div>
+    </details>
+  </main>
+</div>
+<script>
+function afdrukken() {
+  document.querySelectorAll('details').forEach(d => d.setAttribute('open', ''));
+  window.print();
+}
+</script>
+</body>
+</html>
