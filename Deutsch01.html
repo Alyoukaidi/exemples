@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Korrekturen - Rechtschreibung</title>
+  <style>
+    body { margin: 0; font-family: monospace; line-height: 1.1; }
+    .container { display: flex; }
+    aside { width: 240px; background: #f3f3f3; padding: 20px; height: 100vh; position: sticky; top: 0; overflow-y: auto; border-right: 1px solid #ccc; flex-shrink: 0; }
+    aside a { display: block; margin: 12px 0; text-decoration: none; color: #0057b7; font-weight: bold; }
+    aside a .dot-rechtschreibung { color: #c0392b; } /* Rot für den Kreis von Rechtschreibung */
+    aside a .dot-stats { color: #0057b7; } /* Blau für den Kreis von Statistiken */
+    main { flex-grow: 1; padding: 20px; max-width: calc(100% - 280px); }
+    details { margin-bottom: 2em; }
+    summary { font-size: 1.1em; font-weight: bold; cursor: pointer; margin-bottom: .5em; padding: 8px; background: #e8f0fe; border-radius: 4px; }
+    pre { background: #fff; padding: 10px; border-left: 4px solid #0057b7; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; margin: 0; line-height: 1.1; }
+    .rechtschreibung b { color: #c0392b; font-weight: bold; } /* Rot für die fetten Unterschiede */
+    .stats ul { list-style-type: disc; padding-left: 20px; margin: 10px 0; }
+    .stats li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; line-height: 1.2; }
+    .block { display: block; margin: 0; padding: 0; }
+    .st-header { font-weight: bold; line-height: 1.1; }
+    .content { line-height: 1.1; word-wrap: break-word; overflow-wrap: break-word; }
+    .separator { line-height: 1.1; }
+    .downloads { margin: 30px 0 10px 0; font-size: 0.95em; }
+    .downloads button { color: #0057b7; text-decoration: none; border: none; background: none; cursor: pointer; font-size: 1em; padding: 0; }
+    .downloads button:hover { text-decoration: underline; }
+    @media print { aside, summary { display: none; } details { display: block !important; } }
+  </style>
+</head>
+<body>
+<div class='container'>
+  <aside>
+    <h3>Navigation</h3>
+    <a href='#rechtschreibung'><span class='dot-rechtschreibung'>🔴</span> Rechtschreibung</a>
+    <a href='#stats'><span class='dot-stats'>🔵</span> Statistiken</a>
+    <div class='downloads'>
+      <p><button onclick='drucken()'>📄 Als PDF herunterladen</button></p>
+    </div>
+  </aside>
+  <main>
+    <details id='rechtschreibung'>
+      <summary>RECHTSCHREIBUNG - TYPOGRAFIE</summary>
+      <pre class='rechtschreibung'>
+ST 1
+Original :	Beim heutigen AHF-NetUp: Erwachsenenimpfungen, wen <b>kümmert&#x27;s?,</b>
+Korrigiert :	Beim heutigen AHF-NetUp: Erwachsenenimpfungen, wen <b>kümmert&#x27;s?</b>
+--------------------------------------------------
+
+ST 2
+Original :	<b>haben</b> wir Experten aus der Verhaltenswissenschaft,
+Korrigiert :	<b>Haben</b> wir Experten aus der Verhaltenswissenschaft,
+--------------------------------------------------
+
+ST 4
+Original :	der Stadt Wien, dem Bundesministerium <b>unsere</b> Sozialversicherung <b>konfrontiehrt.</b>
+Korrigiert :	der Stadt Wien, dem Bundesministerium <b>und</b> <b>unserer</b> Sozialversicherung <b>konfrontiert.</b>
+--------------------------------------------------
+
+ST 5
+Original :	Wir waren uns einig, <b>das</b> dringend etwas geschehen muss,
+Korrigiert :	Wir waren uns einig, <b>dass</b> dringend etwas geschehen muss,
+--------------------------------------------------
+
+ST 10
+Original :	Auch im Vergleich zu anderen <b>Landern</b> sind wir nicht signifikant schlechter.
+Korrigiert :	Auch im Vergleich zu anderen <b>Ländern</b> sind wir nicht signifikant schlechter.
+--------------------------------------------------
+
+ST 13
+Original :	faktenbasierte Daten haben, um hier <b>einen</b> valide Aussage zu <b>treffen</b>
+Korrigiert :	faktenbasierte Daten haben, um hier <b>eine</b> valide Aussage zu <b>treffen.</b>
+--------------------------------------------------
+
+ST 14
+Original :	Aber ich denke, auch das Beispiel der 20 Millionen <b>COVID-19</b> <b>Impfungen</b> zeigt,
+Korrigiert :	Aber ich denke, auch das Beispiel der 20 Millionen <b>COVID-19-Impfungen</b> zeigt,
+--------------------------------------------------
+
+ST 15
+Original :	<b>das</b> sich Österreicher durchaus impfen lassen.
+Korrigiert :	<b>dass</b> sich Österreicher durchaus impfen lassen.
+--------------------------------------------------
+
+ST 17
+Original :	ist die Arbeit mit <b>fix</b> vereinbarten Impfterminen.
+Korrigiert :	ist die Arbeit mit <b>fest</b> vereinbarten Impfterminen.
+--------------------------------------------------
+
+ST 18
+Original :	Man hat die <b>Möglichkeit</b> den Termin zu stornieren und zu verlegen,
+Korrigiert :	Man hat die <b>Möglichkeit,</b> den Termin zu stornieren und zu verlegen,
+--------------------------------------------------
+
+ST 19
+Original :	aber wenn man nichts <b>hört</b> geht man davon aus,
+Korrigiert :	aber wenn man nichts <b>hört,</b> geht man davon aus,
+--------------------------------------------------
+
+ST 21
+Original :	Das führt zu einer Steigerung um 12 <b>Prozent</b> <b>Punkte.</b>
+Korrigiert :	Das führt zu einer Steigerung um 12 <b>Prozentpunkte.</b>
+--------------------------------------------------
+
+ST 22
+Original :	Es ist eine sehr einfache und günstige <b>intervention,</b>
+Korrigiert :	Es ist eine sehr einfache und günstige <b>Intervention,</b>
+--------------------------------------------------
+
+ST 25
+Original :	indem sie auch zur <b>Bevöllkerung</b> geht, bei Veranstaltungen Impfungen anbietet,
+Korrigiert :	indem sie auch zur <b>Bevölkerung</b> geht, bei Veranstaltungen Impfungen anbietet,
+--------------------------------------------------
+
+ST 26
+Original :	sowie auch künftig bei den <b>Grätzel-Impfungen.</b>
+Korrigiert :	sowie auch künftig bei den <b>Grätzl-Impfungen.</b>
+--------------------------------------------------
+
+ST 29
+Original :	und zu verfügbaren Impfstoffen auf unserer <b>homepage.</b>
+Korrigiert :	und zu verfügbaren Impfstoffen auf unserer <b>Homepage.</b>
+--------------------------------------------------
+
+ST 30
+Original :	Auf der kann man sich auch für <b>Impfungen</b> die bei uns verfügbar <b>sind</b> anmelden.
+Korrigiert :	Auf der kann man sich auch für <b>Impfungen,</b> die bei uns verfügbar <b>sind,</b> anmelden.
+--------------------------------------------------
+
+ST 35
+Original :	Sondern der erste Kontakt mit den <b>Varizella-zoster-viren</b>
+Korrigiert :	Sondern der erste Kontakt mit den <b>Varizella-Zoster-Viren</b>
+--------------------------------------------------
+
+ST 37
+Original :	Man kennt die <b>Windpocken,</b> von der Erstinfektion.
+Korrigiert :	Man kennt die <b>Windpocken</b> von der Erstinfektion.
+--------------------------------------------------
+
+ST 40
+Original :	wieder <b>Verstärken.</b>
+Korrigiert :	wieder <b>verstärken.</b>
+--------------------------------------------------
+
+ST 42
+Original :	gerade selbst etwas schwächer ist, die Reaktivierung dieser <b>Viren.</b>
+Korrigiert :	gerade selbst etwas schwächer ist, die Reaktivierung dieser <b>Viren</b>
+--------------------------------------------------
+
+ST 44
+Original :	Wir möchten ein Programm <b>erarbeiten.</b> wo die Kliniken,
+Korrigiert :	Wir möchten ein Programm <b>erarbeiten,</b> wo die Kliniken,
+--------------------------------------------------
+
+ST 47
+Original :	Sodass sich der Betroffene, die <b>Betroffene</b> Versicherte
+Korrigiert :	Sodass sich der Betroffene, die <b>betroffene</b> Versicherte
+--------------------------------------------------
+      </pre>
+    </details>
+    <details id='stats'>
+      <summary>STATISTIKEN</summary>
+      <div class='stats'>
+        <ul>
+<li>Programmdauer : 3 min</li>
+<li>Anzahl Untertitel : 57</li>
+<li>Anzahl Wörter : 455</li>
+<li>Anzahl Fehler : 23</li>
+<li>Das sind 403,5 Fehler pro 1.000 Untertitel und 50,5 Fehler pro 1.000 Wörter</li>
+        </ul>
+      </div>
+    </details>
+  </main>
+</div>
+<script>
+function drucken() {
+  document.querySelectorAll('details').forEach(d => d.setAttribute('open', ''));
+  window.print();
+}
+</script>
+</body>
+</html>
