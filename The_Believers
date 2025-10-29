@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Corrections - Orthographe</title>
+  <style>
+    body { margin: 0; font-family: monospace; line-height: 1.1; }
+    .container { display: flex; }
+    aside { width: 240px; background: #f3f3f3; padding: 20px; height: 100vh; position: sticky; top: 0; overflow-y: auto; border-right: 1px solid #ccc; flex-shrink: 0; }
+    aside a { display: block; margin: 12px 0; text-decoration: none; color: #0057b7; font-weight: bold; }
+    aside a .dot-orthographe { color: #c0392b; } /* Rouge pour le rond d'Orthographe */
+    aside a .dot-stats { color: #0057b7; } /* Bleu pour le rond de Statistiques */
+    main { flex-grow: 1; padding: 20px; max-width: calc(100% - 280px); }
+    details { margin-bottom: 2em; }
+    summary { font-size: 1.1em; font-weight: bold; cursor: pointer; margin-bottom: .5em; padding: 8px; background: #e8f0fe; border-radius: 4px; }
+    pre { background: #fff; padding: 10px; border-left: 4px solid #0057b7; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; margin: 0; line-height: 1.1; }
+    .orthographe b { color: #c0392b; font-weight: bold; } /* Rouge pour les différences en gras */
+    .stats ul { list-style-type: disc; padding-left: 20px; margin: 10px 0; }
+    .stats li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; line-height: 1.2; }
+    .block { display: block; margin: 0; padding: 0; }
+    .st-header { font-weight: bold; line-height: 1.1; }
+    .content { line-height: 1.1; word-wrap: break-word; overflow-wrap: break-word; }
+    .separator { line-height: 1.1; }
+    .downloads { margin: 30px 0 10px 0; font-size: 0.95em; }
+    .downloads button { color: #0057b7; text-decoration: none; border: none; background: none; cursor: pointer; font-size: 1em; padding: 0; }
+    .downloads button:hover { text-decoration: underline; }
+    @media print { aside, summary { display: none; } details { display: block !important; } }
+  </style>
+</head>
+<body>
+<div class='container'>
+  <aside>
+    <h3>Navigation</h3>
+    <a href='#orthographe'><span class='dot-orthographe'>🔴</span> Orthographe</a>
+    <a href='#stats'><span class='dot-stats'>🔵</span> Statistiques</a>
+    <div class='downloads'>
+      <p><button onclick='imprimer()'>📄 Télécharger en PDF</button></p>
+    </div>
+  </aside>
+  <main>
+    <details id='orthographe'>
+      <summary>ORTHOGRAPHE - TYPOGRAPHIE</summary>
+      <pre class='orthographe'>
+ST 105
+Original  :	<b>où</b> pas un seul d'entre eux
+Corrigé   :	<b>dont</b> pas un seul d'entre eux
+--------------------------------------------------
+
+ST 106
+Original  :	ne réussit à <b>n&#x27;y</b> rester ne serait-ce qu'une semaine,
+Corrigé   :	ne réussit à <b>y</b> rester ne serait-ce qu'une semaine,
+--------------------------------------------------
+
+ST 117
+Original  :	pour que personne ne puisse supporter <b>y</b> vivre aujourd'hui ?
+Corrigé   :	pour que personne ne puisse supporter <b>d&#x27;y</b> vivre aujourd'hui ?
+--------------------------------------------------
+
+ST 123
+Original  :	<b>où</b> le nombre de civils dépassait les milliers.
+Corrigé   :	<b>et</b> le nombre de civils <b>tués</b> dépassait les milliers.
+--------------------------------------------------
+
+ST 185
+Original  :	<b>-Ben...ils</b> peuvent travailler sur les conditions.
+Corrigé   :	<b>-Ben...</b> <b>ils</b> peuvent travailler sur les conditions.
+--------------------------------------------------
+
+ST 219
+Original  :	pour y accéder <b>à</b> l'extérieur, la porte est condamnée.
+Corrigé   :	pour y accéder <b>de</b> l'extérieur, la porte est condamnée.
+--------------------------------------------------
+
+ST 284
+Original  :	Lui, il en rajouté juste un peu. Il y en avait déjà plein.
+Corrigé   :	Lui, il en <b>a</b> rajouté juste un peu. Il y en avait déjà plein.
+--------------------------------------------------
+
+ST 302
+Original  :	Là, une des pièces en haut, on vient de <b>voir....</b>
+Corrigé   :	Là, une des pièces en haut, on vient de <b>voir...</b>
+--------------------------------------------------
+
+ST 316
+Original  :	on est <b>parti</b> prendre un café avec le propriétaire
+Corrigé   :	on est <b>partis</b> prendre un café avec le propriétaire
+--------------------------------------------------
+
+ST 399
+Original  :	<b>dans</b> la chambre où il a vu la petite fille.
+Corrigé   :	<b>Dans</b> la chambre où il a vu la petite fille.
+--------------------------------------------------
+
+ST 572
+Original  :	afin de <b>s&#x27;assurer</b> de sa santé.
+Corrigé   :	afin de <b>nous</b> <b>assurer</b> de sa santé.
+--------------------------------------------------
+
+ST 584
+Original  :	-Nous avons laissé la caméra seule filmer pendant <b>1</b> bonne heure.
+Corrigé   :	-Nous avons laissé la caméra seule filmer pendant <b>une</b> bonne heure.
+--------------------------------------------------
+
+ST 636
+Original  :	mais aussi qualité de ces phénomènes paranormaux.
+Corrigé   :	mais aussi <b>la</b> qualité de ces phénomènes paranormaux.
+--------------------------------------------------
+
+ST 648
+Original  :	-Moi, <b>je</b> le mien aussi. OK ? -OK.
+Corrigé   :	-Moi, <b>j&#x27;ai</b> le mien aussi. OK ? -OK.
+--------------------------------------------------
+
+ST 686
+Original  :	j'avais l'impression de <b>t&#x27;entourer</b> de part et d'autre.
+Corrigé   :	j'avais l'impression de <b>vous</b> <b>entourer</b> de part et d'autre.
+--------------------------------------------------
+
+ST 758
+Original  :	Je <b>re</b> <b>tenterai</b> peut-être dans la soirée.
+Corrigé   :	Je <b>retenterai</b> peut-être dans la soirée.
+--------------------------------------------------
+
+ST 886
+Original  :	Une anomalie <b>d&#x27;un</b> taille gigantesque.
+Corrigé   :	Une anomalie <b>d&#x27;une</b> taille gigantesque.
+--------------------------------------------------
+
+ST 901
+Original  :	Nous avons pu mettre <b>à</b> jour certains phénomènes
+Corrigé   :	Nous avons pu mettre <b>au</b> jour certains phénomènes
+--------------------------------------------------
+      </pre>
+    </details>
+    <details id='stats'>
+      <summary>STATISTIQUES</summary>
+      <div class='stats'>
+        <ul>
+<li>Durée du programme : 1h05</li>
+<li>Nombre de sous-titres : 973</li>
+<li>Nombre de mots : 5 423</li>
+<li>Nombre de fautes : 18</li>
+<li>Soit 18.5 fautes pour 1 000 sous-titres et 3.3 fautes pour 1 000 mots</li>
+        </ul>
+      </div>
+    </details>
+  </main>
+</div>
+<script>
+function imprimer() {
+  document.querySelectorAll('details').forEach(d => d.setAttribute('open', ''));
+  window.print();
+}
+</script>
+</body>
+</html>
