@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Corrections - Orthographe</title>
+  <style>
+    body { margin: 0; font-family: monospace; line-height: 1.1; }
+    .container { display: flex; }
+    aside { width: 240px; background: #f3f3f3; padding: 20px; height: 100vh; position: sticky; top: 0; overflow-y: auto; border-right: 1px solid #ccc; flex-shrink: 0; }
+    aside a { display: block; margin: 12px 0; text-decoration: none; color: #0057b7; font-weight: bold; }
+    aside a .dot-orthographe { color: #c0392b; } /* Rouge pour le rond d'Orthographe */
+    aside a .dot-stats { color: #0057b7; } /* Bleu pour le rond de Statistiques */
+    main { flex-grow: 1; padding: 20px; max-width: calc(100% - 280px); }
+    details { margin-bottom: 2em; }
+    summary { font-size: 1.1em; font-weight: bold; cursor: pointer; margin-bottom: .5em; padding: 8px; background: #e8f0fe; border-radius: 4px; }
+    pre { background: #fff; padding: 10px; border-left: 4px solid #0057b7; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; margin: 0; line-height: 1.1; }
+    .orthographe b { color: #c0392b; font-weight: bold; } /* Rouge pour les différences en gras */
+    .stats ul { list-style-type: disc; padding-left: 20px; margin: 10px 0; }
+    .stats li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; line-height: 1.2; }
+    .block { display: block; margin: 0; padding: 0; }
+    .st-header { font-weight: bold; line-height: 1.1; }
+    .content { line-height: 1.1; word-wrap: break-word; overflow-wrap: break-word; }
+    .separator { line-height: 1.1; }
+    .downloads { margin: 30px 0 10px 0; font-size: 0.95em; }
+    .downloads button { color: #0057b7; text-decoration: none; border: none; background: none; cursor: pointer; font-size: 1em; padding: 0; }
+    .downloads button:hover { text-decoration: underline; }
+    @media print { aside, summary { display: none; } details { display: block !important; } }
+  </style>
+</head>
+<body>
+<div class='container'>
+  <aside>
+    <h3>Navigation</h3>
+    <a href='#orthographe'><span class='dot-orthographe'>🔴</span> Orthographe</a>
+    <a href='#stats'><span class='dot-stats'>🔵</span> Statistiques</a>
+    <div class='downloads'>
+      <p><button onclick='imprimer()'>📄 Télécharger en PDF</button></p>
+    </div>
+  </aside>
+  <main>
+    <details id='orthographe'>
+      <summary>ORTHOGRAPHE - TYPOGRAPHIE</summary>
+      <pre class='orthographe'>
+ST 75
+Original  :	Mais à quoi bon <b>parler</b> semble dire Delphine.
+Corrigé   :	Mais à quoi bon <b>parler,</b> semble dire Delphine.
+--------------------------------------------------
+
+ST 137
+Original  :	Tout se passe avenue Pierre <b>1er</b> de Serbie.
+Corrigé   :	Tout se passe avenue Pierre <b>Ier</b> de Serbie.
+--------------------------------------------------
+
+ST 222
+Original  :	celle qui deviendra le personnage de <b>l&#x27;amour</b> <b>l&#x27;après-midi.</b>
+Corrigé   :	celle qui deviendra le personnage de <b>&quot;L&#x27;Amour</b> <b>l&#x27;après-midi&quot;.</b>
+--------------------------------------------------
+
+ST 274
+Original  :	Elle lui permet de décrire une nouvelle carte du <b>tendre.</b>
+Corrigé   :	Elle lui permet de décrire une nouvelle carte du <b>Tendre.</b>
+--------------------------------------------------
+
+ST 305
+Original  :	on se perd, au moins <b>un</b> moitié.
+Corrigé   :	on se perd, au moins <b>une</b> moitié.
+--------------------------------------------------
+
+ST 309
+Original  :	ainsi n'approchera de <b>moi,</b>
+Corrigé   :	ainsi n'approchera de <b>moi</b>
+--------------------------------------------------
+
+ST 413
+Original  :	des jeunes cinéphiles <b>qu&#x27;ils</b> <b>fréquentent</b> alors.
+Corrigé   :	des jeunes cinéphiles <b>qu&#x27;il</b> <b>fréquente</b> alors.
+--------------------------------------------------
+
+ST 415
+Original  :	C'était à la fin des années 40, au <b>Ciné-Club,</b> du Quartier Latin.
+Corrigé   :	C'était à la fin des années 40, au <b>Ciné-Club</b> du Quartier Latin.
+--------------------------------------------------
+
+ST 502
+Original  :	Mon goût pour la mobilité me rendrait peu <b>supportable.</b>
+Corrigé   :	Mon goût pour la mobilité me rendrait peu <b>supportable</b>
+--------------------------------------------------
+
+ST 503
+Original  :	<b>Un</b> séjour prolongé devant la table de l'écrivain,
+Corrigé   :	<b>un</b> séjour prolongé devant la table de l'écrivain,
+--------------------------------------------------
+
+ST 507
+Original  :	lorsque Rohmer, à cette <b>époque,</b> Maurice,
+Corrigé   :	lorsque Rohmer, à cette <b>époque</b> Maurice,
+--------------------------------------------------
+
+ST 534
+Original  :	qui <b>s&#x27;adossent</b> à la colline.
+Corrigé   :	qui <b>s&#x27;adosse</b> à la colline.
+--------------------------------------------------
+
+ST 542
+Original  :	<b>Fusent-ils</b> poussiéreux ou d'un autre temps,
+Corrigé   :	<b>Fussent-ils</b> poussiéreux ou d'un autre temps,
+--------------------------------------------------
+
+ST 585
+Original  :	quelque chose de primitif et de <b>crucial,</b>
+Corrigé   :	quelque chose de primitif et de <b>crucial</b> <b>:</b>
+--------------------------------------------------
+
+ST 603
+Original  :	-Bois ton café, il va être <b>froid</b>
+Corrigé   :	-Bois ton café, il va être <b>froid.</b>
+--------------------------------------------------
+
+ST 624
+Original  :	<b>Ses</b> grands écarts sont fréquents chez lui.
+Corrigé   :	<b>Ces</b> grands écarts sont fréquents chez lui.
+--------------------------------------------------
+
+ST 634
+Original  :	<b>j&#x27;ai</b> à peine de commencer à l'étudier.
+Corrigé   :	<b>je</b> <b>viens</b> à peine de commencer à l'étudier.
+--------------------------------------------------
+
+ST 662
+Original  :	-René note et consigne les moindres faits <b>des</b> gestes de son frère aîné.
+Corrigé   :	-René note et consigne les moindres faits <b>et</b> gestes de son frère aîné.
+--------------------------------------------------
+
+ST 689
+Original  :	agencent le monde <b>rhomérien.</b>
+Corrigé   :	agencent le monde <b>rohmérien.</b>
+--------------------------------------------------
+
+ST 711
+Original  :	"Pour Hélène se conjurèrent les <b>sèvres</b> <b>ornementales</b>
+Corrigé   :	"Pour Hélène se conjurèrent les <b>sèves</b> <b>ornamentales</b>
+--------------------------------------------------
+
+ST 725
+Original  :	la littérature comme <b>béaba.</b>
+Corrigé   :	la littérature comme <b>b.a.-ba.</b>
+--------------------------------------------------
+
+ST 744
+Original  :	-C'est pas <b>en</b> enfantin. C'est le prix Goncourt.
+Corrigé   :	-C'est pas enfantin. C'est le prix Goncourt.
+--------------------------------------------------
+
+ST 747
+Original  :	-Jules Verne, Hector <b>Mallow,</b>
+Corrigé   :	-Jules Verne, Hector <b>Malot,</b>
+--------------------------------------------------
+
+ST 763
+Original  :	Ou dans un film des <b>Frères</b> Lumière.
+Corrigé   :	Ou dans un film des <b>frères</b> Lumière.
+--------------------------------------------------
+
+ST 798
+Original  :	un <b>cours</b> de tennis.
+Corrigé   :	un <b>court</b> de tennis.
+--------------------------------------------------
+
+ST 822
+Original  :	le <b>LorrainÏ.</b>
+Corrigé   :	le <b>Lorrain.</b>
+--------------------------------------------------
+
+ST 865
+Original  :	les choses <b>mêmes.</b>
+Corrigé   :	les choses <b>mêmes.&quot;</b>
+--------------------------------------------------
+
+ST 901
+Original  :	<b>Reste</b> ces jeux d'adolescents,
+Corrigé   :	<b>Restent</b> ces jeux d'adolescents,
+--------------------------------------------------
+
+ST 915
+Original  :	Je <b>décidais</b> d'étendre le champ de mes investigations
+Corrigé   :	Je <b>décidai</b> d'étendre le champ de mes investigations
+--------------------------------------------------
+
+ST 918
+Original  :	le guet sur le boulevard en <b>ses</b> fins d'après-midi chaudes
+Corrigé   :	le guet sur le boulevard en <b>ces</b> fins d'après-midi chaudes
+--------------------------------------------------
+
+ST 1015
+Original  :	mais prenant un large recul des collines d'Argenteuil.
+Corrigé   :	mais <b>en</b> prenant un large recul des collines d'Argenteuil.
+--------------------------------------------------
+      </pre>
+    </details>
+    <details id='stats'>
+      <summary>STATISTIQUES</summary>
+      <div class='stats'>
+        <ul>
+<li>Durée du programme : 59 min</li>
+<li>Nombre de sous-titres : 1 057</li>
+<li>Nombre de mots : 6 287</li>
+<li>Nombre de fautes : 31</li>
+<li>Soit 29.3 fautes pour 1 000 sous-titres et 4.9 fautes pour 1 000 mots</li>
+        </ul>
+      </div>
+    </details>
+  </main>
+</div>
+<script>
+function imprimer() {
+  document.querySelectorAll('details').forEach(d => d.setAttribute('open', ''));
+  window.print();
+}
+</script>
+</body>
+</html>
