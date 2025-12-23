@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Corrections - Orthographe</title>
+  <style>
+    body { margin: 0; font-family: monospace; line-height: 1.1; }
+    .container { display: flex; }
+    aside { width: 240px; background: #f3f3f3; padding: 20px; height: 100vh; position: sticky; top: 0; overflow-y: auto; border-right: 1px solid #ccc; flex-shrink: 0; }
+    aside a { display: block; margin: 12px 0; text-decoration: none; color: #0057b7; font-weight: bold; }
+    aside a .dot-orthographe { color: #c0392b; } /* Rouge pour le rond d'Orthographe */
+    aside a .dot-stats { color: #0057b7; } /* Bleu pour le rond de Statistiques */
+    main { flex-grow: 1; padding: 20px; max-width: calc(100% - 280px); }
+    details { margin-bottom: 2em; }
+    summary { font-size: 1.1em; font-weight: bold; cursor: pointer; margin-bottom: .5em; padding: 8px; background: #e8f0fe; border-radius: 4px; }
+    pre { background: #fff; padding: 10px; border-left: 4px solid #0057b7; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; margin: 0; line-height: 1.1; }
+    .orthographe b { color: #c0392b; font-weight: bold; } /* Rouge pour les différences en gras */
+    .stats ul { list-style-type: disc; padding-left: 20px; margin: 10px 0; }
+    .stats li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; line-height: 1.2; }
+    .block { display: block; margin: 0; padding: 0; }
+    .st-header { font-weight: bold; line-height: 1.1; }
+    .content { line-height: 1.1; word-wrap: break-word; overflow-wrap: break-word; }
+    .separator { line-height: 1.1; }
+    .downloads { margin: 30px 0 10px 0; font-size: 0.95em; }
+    .downloads button { color: #0057b7; text-decoration: none; border: none; background: none; cursor: pointer; font-size: 1em; padding: 0; }
+    .downloads button:hover { text-decoration: underline; }
+    @media print { aside, summary { display: none; } details { display: block !important; } }
+  </style>
+</head>
+<body>
+<div class='container'>
+  <aside>
+    <h3>Navigation</h3>
+    <a href='#orthographe'><span class='dot-orthographe'>🔴</span> Orthographe</a>
+    <a href='#stats'><span class='dot-stats'>🔵</span> Statistiques</a>
+    <div class='downloads'>
+      <p><button onclick='imprimer()'>📄 Télécharger en PDF</button></p>
+    </div>
+  </aside>
+  <main>
+    <details id='orthographe'>
+      <summary>ORTHOGRAPHE - TYPOGRAPHIE</summary>
+      <pre class='orthographe'>
+ST 73
+Original  :	Je lui <b>demandais</b> aussitôt de chanter comme il le faisait.
+Corrigé   :	Je lui <b>demandai</b> aussitôt de chanter comme il le faisait.
+--------------------------------------------------
+
+ST 260
+Original  :	que je sus aussitôt que <b>j&#x27;irai</b> jusqu'au bout,
+Corrigé   :	que je sus aussitôt que <b>j&#x27;irais</b> jusqu'au bout,
+--------------------------------------------------
+
+ST 408
+Original  :	et je me <b>donnais</b> le titre fictif de docteur en histoire.
+Corrigé   :	et je me <b>donnai</b> le titre fictif de docteur en histoire.
+--------------------------------------------------
+
+ST 529
+Original  :	lui <b>faciliteraient</b> peut-être le travail de parole
+Corrigé   :	lui <b>faciliterait</b> peut-être le travail de parole
+--------------------------------------------------
+
+ST 720
+Original  :	Je <b>louais</b> dès le lendemain une guimbarde russe
+Corrigé   :	Je <b>louai</b> dès le lendemain une guimbarde russe
+--------------------------------------------------
+
+ST 736
+Original  :	Barbara, <b>dis</b> <b>leur</b> bonjour.
+Corrigé   :	Barbara, <b>dis-leur</b> bonjour.
+--------------------------------------------------
+
+ST 760
+Original  :	Deux garçons comme son petit-fils qui avait à peu près <b>cet-âge</b> <b>là.</b>
+Corrigé   :	Deux garçons comme son petit-fils qui avait à peu près <b>cet</b> <b>âge-là.</b>
+--------------------------------------------------
+
+ST 1314
+Original  :	J'avais promis que je ne le <b>ferai</b> pas.
+Corrigé   :	J'avais promis que je ne le <b>ferais</b> pas.
+--------------------------------------------------
+
+ST 1585
+Original  :	on s'est <b>réparti</b> tous les quatre dans les toilettes
+Corrigé   :	on s'est <b>répartis</b> tous les quatre dans les toilettes
+--------------------------------------------------
+
+ST 2711
+Original  :	Les <b>intéressé</b> réclament de l'argent
+Corrigé   :	Les <b>intéressés</b> réclament de l'argent
+--------------------------------------------------
+
+ST 3123
+Original  :	-Oui, c'est vraiment un voyage qui m'a <b>marqué.</b>
+Corrigé   :	-Oui, c'est vraiment un voyage qui m'a <b>marquée.</b>
+--------------------------------------------------
+
+ST 3144
+Original  :	Ces Coloured peuvent être issus <b>d&#x27;union</b>
+Corrigé   :	Ces Coloured peuvent être issus <b>d&#x27;unions</b>
+--------------------------------------------------
+
+ST 3184
+Original  :	Cet ouvrier, il l'aime tellement qu'il <b>s&#x27;écrit</b> :
+Corrigé   :	Cet ouvrier, il l'aime tellement qu'il <b>s&#x27;écrie</b> :
+--------------------------------------------------
+
+ST 3517
+Original  :	qu'un potentiel génocide des <b>blancs</b> se prépare dans son pays natal.
+Corrigé   :	qu'un potentiel génocide des <b>Blancs</b> se prépare dans son pays natal.
+--------------------------------------------------
+
+ST 3601
+Original  :	je savais même que ça allait être un truc énorme.
+Corrigé   :	je savais même <b>pas</b> que ça allait être un truc énorme.
+--------------------------------------------------
+
+ST 3766
+Original  :	avec des coquillages très prisés des <b>capverdiens</b>
+Corrigé   :	avec des coquillages très prisés des <b>Capverdiens</b>
+--------------------------------------------------
+
+ST 3809
+Original  :	<b>et</b> le Cap-Vert, encore aujourd'hui,
+Corrigé   :	<b>Et</b> le Cap-Vert, encore aujourd'hui,
+--------------------------------------------------
+
+ST 3883
+Original  :	en <b>terme</b> de poissons et de fruits de mer.
+Corrigé   :	en <b>termes</b> de poissons et de fruits de mer.
+--------------------------------------------------
+
+ST 4165
+Original  :	des chansons <b>capverdienne</b> :
+Corrigé   :	des chansons <b>capverdiennes</b> :
+--------------------------------------------------
+
+ST 4327
+Original  :	<b>faite</b> à base d'huile de cette dernière et de farine de maïs.
+Corrigé   :	<b>faites</b> à base d'huile de cette dernière et de farine de maïs.
+--------------------------------------------------
+
+ST 4422
+Original  :	Couvrez et <b>laisser</b> cuire à feu vif
+Corrigé   :	Couvrez et <b>laissez</b> cuire à feu vif
+--------------------------------------------------
+
+ST 4523
+Original  :	avant d'être à son tour <b>adapté</b> aux produits mauriciens.
+Corrigé   :	avant d'être à son tour <b>adaptée</b> aux produits mauriciens.
+--------------------------------------------------
+
+ST 4582
+Original  :	-Peut-être qu'ils vont rentrer <b>bredouille</b> ?
+Corrigé   :	-Peut-être qu'ils vont rentrer <b>bredouilles</b> ?
+--------------------------------------------------
+
+ST 4706
+Original  :	prennent grand soin toutes ces plantes,
+Corrigé   :	prennent grand soin <b>de</b> toutes ces plantes,
+--------------------------------------------------
+
+ST 4915
+Original  :	pour les <b>marin-pêcheurs,</b> c'est une aubaine.
+Corrigé   :	pour les <b>marins-pêcheurs,</b> c'est une aubaine.
+--------------------------------------------------
+
+ST 4919
+Original  :	sont aujourd'hui <b>considérés</b> comme menacées.
+Corrigé   :	sont aujourd'hui <b>considérées</b> comme menacées.
+--------------------------------------------------
+
+ST 4975
+Original  :	-On laisse <b>aux</b> frais et à n'importe quelle heure,
+Corrigé   :	-On laisse <b>au</b> frais et à n'importe quelle heure,
+--------------------------------------------------
+
+ST 5066
+Original  :	Moi, je ne cuisine que le <b>Mauricien.</b>
+Corrigé   :	Moi, je ne cuisine que le <b>mauricien.</b>
+--------------------------------------------------
+
+ST 5151
+Original  :	<b>Laisser</b> frire, puis <b>verser</b> un verre d'eau.
+Corrigé   :	<b>Laissez</b> frire, puis <b>versez</b> un verre d'eau.
+--------------------------------------------------
+
+ST 5152
+Original  :	<b>Ajouter</b> les oignons en quartiers, les verts de cébettes émincés
+Corrigé   :	<b>Ajoutez</b> les oignons en quartiers, les verts de cébettes émincés
+--------------------------------------------------
+
+ST 5179
+Original  :	Le <b>vol</b> <b>au</b> <b>vent,</b>
+Corrigé   :	Le <b>vol-au-vent,</b>
+--------------------------------------------------
+
+ST 5182
+Original  :	et <b>arrosé</b> de sauce. -Tu prends tes couverts
+Corrigé   :	et <b>arrosée</b> de sauce. -Tu prends tes couverts
+--------------------------------------------------
+
+ST 5258
+Original  :	Selon la légende, il l'aurait <b>rendu</b> si légère
+Corrigé   :	Selon la légende, il l'aurait <b>rendue</b> si légère
+--------------------------------------------------
+
+ST 5266
+Original  :	Je me trouve <b>Place</b> Vendôme. On est à deux pas de l'Opéra.
+Corrigé   :	Je me trouve <b>place</b> Vendôme. On est à deux pas de l'Opéra.
+--------------------------------------------------
+
+ST 5297
+Original  :	<b>et</b> on va aller chercher un cube blanc avec et puis on sera au top.
+Corrigé   :	<b>Et</b> on va aller chercher un cube blanc avec et puis on sera au top.
+--------------------------------------------------
+
+ST 5360
+Original  :	Respecter ce que le paysan <b>fait</b> quoi.
+Corrigé   :	Respecter ce que le paysan <b>fait,</b> quoi.
+--------------------------------------------------
+
+ST 5385
+Original  :	On ne peut pas faire mieux. <b>-Voilà</b>
+Corrigé   :	On ne peut pas faire mieux. <b>-Voilà.</b>
+--------------------------------------------------
+
+ST 5432
+Original  :	Son nom scientifique, c'est Agaricus <b>Bisporus</b>
+Corrigé   :	Son nom scientifique, c'est Agaricus <b>bisporus</b>
+--------------------------------------------------
+
+ST 5479
+Original  :	<b>Qu&#x27;est</b> <b>ce</b> qu'on voit ? Origine : Pologne,
+Corrigé   :	<b>Qu&#x27;est-ce</b> qu'on voit ? Origine : Pologne,
+--------------------------------------------------
+
+ST 5612
+Original  :	qui te <b>donne</b> cette folie et cette passion.
+Corrigé   :	qui te <b>donnent</b> cette folie et cette passion.
+--------------------------------------------------
+
+ST 5696
+Original  :	-La première chose à <b>faire.</b> <b>C&#x27;est</b> mettre la sauce.
+Corrigé   :	-La première chose à <b>faire,</b> <b>c&#x27;est</b> mettre la sauce.
+--------------------------------------------------
+
+ST 5869
+Original  :	<b>Transférer</b> la sauce dans une poêle,
+Corrigé   :	<b>Transférez</b> la sauce dans une poêle,
+--------------------------------------------------
+      </pre>
+    </details>
+    <details id='stats'>
+      <summary>STATISTIQUES</summary>
+      <div class='stats'>
+        <ul>
+<li>Durée du programme : 5h05</li>
+<li>Nombre de sous-titres : 5 884</li>
+<li>Nombre de mots : 37 432</li>
+<li>Nombre de fautes : 42</li>
+<li>Soit 7.1 fautes pour 1 000 sous-titres et 1.1 fautes pour 1 000 mots</li>
+        </ul>
+      </div>
+    </details>
+  </main>
+</div>
+<script>
+function imprimer() {
+  document.querySelectorAll('details').forEach(d => d.setAttribute('open', ''));
+  window.print();
+}
+</script>
+</body>
+</html>

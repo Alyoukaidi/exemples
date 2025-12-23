@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Corrections - Orthographe</title>
+  <style>
+    body { margin: 0; font-family: monospace; line-height: 1.1; }
+    .container { display: flex; }
+    aside { width: 240px; background: #f3f3f3; padding: 20px; height: 100vh; position: sticky; top: 0; overflow-y: auto; border-right: 1px solid #ccc; flex-shrink: 0; }
+    aside a { display: block; margin: 12px 0; text-decoration: none; color: #0057b7; font-weight: bold; }
+    aside a .dot-orthographe { color: #c0392b; } /* Rouge pour le rond d'Orthographe */
+    aside a .dot-stats { color: #0057b7; } /* Bleu pour le rond de Statistiques */
+    main { flex-grow: 1; padding: 20px; max-width: calc(100% - 280px); }
+    details { margin-bottom: 2em; }
+    summary { font-size: 1.1em; font-weight: bold; cursor: pointer; margin-bottom: .5em; padding: 8px; background: #e8f0fe; border-radius: 4px; }
+    pre { background: #fff; padding: 10px; border-left: 4px solid #0057b7; white-space: pre-wrap; word-wrap: break-word; overflow-wrap: break-word; margin: 0; line-height: 1.1; }
+    .orthographe b { color: #c0392b; font-weight: bold; } /* Rouge pour les différences en gras */
+    .stats ul { list-style-type: disc; padding-left: 20px; margin: 10px 0; }
+    .stats li { padding: 10px; margin: 5px 0; background: #f9f9f9; border-radius: 4px; line-height: 1.2; }
+    .block { display: block; margin: 0; padding: 0; }
+    .st-header { font-weight: bold; line-height: 1.1; }
+    .content { line-height: 1.1; word-wrap: break-word; overflow-wrap: break-word; }
+    .separator { line-height: 1.1; }
+    .downloads { margin: 30px 0 10px 0; font-size: 0.95em; }
+    .downloads button { color: #0057b7; text-decoration: none; border: none; background: none; cursor: pointer; font-size: 1em; padding: 0; }
+    .downloads button:hover { text-decoration: underline; }
+    @media print { aside, summary { display: none; } details { display: block !important; } }
+  </style>
+</head>
+<body>
+<div class='container'>
+  <aside>
+    <h3>Navigation</h3>
+    <a href='#orthographe'><span class='dot-orthographe'>🔴</span> Orthographe</a>
+    <a href='#stats'><span class='dot-stats'>🔵</span> Statistiques</a>
+    <div class='downloads'>
+      <p><button onclick='imprimer()'>📄 Télécharger en PDF</button></p>
+    </div>
+  </aside>
+  <main>
+    <details id='orthographe'>
+      <summary>ORTHOGRAPHE - TYPOGRAPHIE</summary>
+      <pre class='orthographe'>
+ST 1488
+Original  :	à la peine de 8 mois de prison dont 4 mois <b>fermes,</b>
+Corrigé   :	à la peine de 8 mois de prison dont 4 mois <b>ferme,</b>
+--------------------------------------------------
+
+ST 1609
+Original  :	Il se lance dans la <b>satyre</b> et la caricature
+Corrigé   :	Il se lance dans la <b>satire</b> et la caricature
+--------------------------------------------------
+
+ST 2092
+Original  :	Guy met <b>a</b> contribution les plus volontaires
+Corrigé   :	Guy met <b>à</b> contribution les plus volontaires
+--------------------------------------------------
+
+ST 2547
+Original  :	d'un accès <b>au</b> soins rapide et performant.
+Corrigé   :	d'un accès <b>aux</b> soins rapide et performant.
+--------------------------------------------------
+
+ST 3183
+Original  :	ne m'a <b>parue</b> à ce point fragile. Sa survie dépend
+Corrigé   :	ne m'a <b>paru</b> à ce point fragile. Sa survie dépend
+--------------------------------------------------
+
+ST 3205
+Original  :	Je ne pense pas que qui ce soit dise égoïstement :
+Corrigé   :	Je ne pense pas que qui <b>que</b> ce soit dise égoïstement :
+--------------------------------------------------
+
+ST 3322
+Original  :	Les Mapuche vivent ici regroupés en <b>petit</b> hameaux
+Corrigé   :	Les Mapuche vivent ici regroupés en <b>petits</b> hameaux
+--------------------------------------------------
+
+ST 3764
+Original  :	Les combats sont <b>éclair,</b> explosifs.
+Corrigé   :	Les combats sont <b>éclairs,</b> explosifs.
+--------------------------------------------------
+
+ST 3788
+Original  :	<b>leurs</b> corps assimile les calories,
+Corrigé   :	<b>leur</b> corps assimile les calories,
+--------------------------------------------------
+
+ST 4339
+Original  :	qui <b>attirent</b> la foule vers la danse.
+Corrigé   :	qui <b>attire</b> la foule vers la danse.
+--------------------------------------------------
+
+ST 5225
+Original  :	Devant tout le village réuni, les novices font <b>faire</b> leur entrée
+Corrigé   :	Devant tout le village réuni, les novices font leur entrée
+--------------------------------------------------
+
+ST 5648
+Original  :	Vous le prélevez dans les sacs à <b>venins</b> ?
+Corrigé   :	Vous le prélevez dans les sacs à <b>venin</b> ?
+--------------------------------------------------
+      </pre>
+    </details>
+    <details id='stats'>
+      <summary>STATISTIQUES</summary>
+      <div class='stats'>
+        <ul>
+<li>Durée du programme : 6h51</li>
+<li>Nombre de sous-titres : 5 930</li>
+<li>Nombre de mots : 41 851</li>
+<li>Nombre de fautes : 12</li>
+<li>Soit 2.0 fautes pour 1 000 sous-titres et 0.3 fautes pour 1 000 mots</li>
+        </ul>
+      </div>
+    </details>
+  </main>
+</div>
+<script>
+function imprimer() {
+  document.querySelectorAll('details').forEach(d => d.setAttribute('open', ''));
+  window.print();
+}
+</script>
+</body>
+</html>
